@@ -29,7 +29,7 @@ def get_goal_referers_list(table_id, goal_id):
     # Try to make a request to the API. Print the results or handle errors.
     try:
         results = get_query_best_referrers_last_week(service, table_id, goal_id).execute()
-        export_geckoboard_list_results(results)
+        export_geckoboard_list_results(results,goal_id)
     except TypeError, error:
         # Handle errors in constructing a query.
         print ('There was an error in constructing your query : %s' % error)

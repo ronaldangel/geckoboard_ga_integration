@@ -75,8 +75,8 @@
       <file leaf-file-name="gapiv3_to_geckboard.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gapiv3_to_geckboard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7395833" vertical-offset="624" max-vertical-offset="1230">
-              <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.49479166" vertical-offset="180" max-vertical-offset="1230">
+              <caret line="31" column="54" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
               <folding>
                 <element signature="e#235#250#0" expanded="true" />
               </folding>
@@ -799,8 +799,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gapiv3_to_geckboard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7395833" vertical-offset="624" max-vertical-offset="1230">
-          <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.49479166" vertical-offset="180" max-vertical-offset="1230">
+          <caret line="31" column="54" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
           <folding>
             <element signature="e#235#250#0" expanded="true" />
           </folding>
