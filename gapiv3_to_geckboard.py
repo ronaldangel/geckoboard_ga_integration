@@ -15,6 +15,8 @@ from oauth2client.client import AccessTokenRefreshError
 import time
 from datetime import date, timedelta
 import json
+import mysql.connector
+
 
 
 def get_goal_referers_list(table_id, goal_id):
@@ -61,15 +63,26 @@ def get_query_best_referrers_last_week(service, table_id, goal_id):
 
 def export_geckoboard_list_results(results, goal_id):
     json_output = []
+    cnx = mysql.connector.connect(user='ronald_angel', database='voice123', password='hawrosavel', host='rds.v123.lan.bunnyinc.com')
+    cursor = cnx.cursor()
     if results.get('rows', []):
         for row in results.get('rows'):
-            json_output.append({"title": {'text': "" + str(row[0])}, 'description': "" + str(row[2]),
-                                'label': {'name': "" + str(row[3]), 'color': "#3f98b6"}})
+            json_output.append({"title": {'text': "" + str(row[0])}, "label": {"name": "" + str(row[2]), "color": "#ff2015"}, 'description': "" + str(row[3])})
     print str(json_output)
 
     ts = time.time()
     with open('v123_goal'+goal_id+'.json', 'wb') as fp:
         json.dump(json_output, fp)
+
+    add_integration = ("INSERT INTO integrations_v123"
+               "(integration_name, answer_value, response_value, date_creation) "
+               "VALUES (%s, %s,%s,%s)")
+
+    data_integration = ('ga','v123_goal'+goal_id,str(json_output), date.today())
+    cursor.execute(add_integration, data_integration)
+    cnx.commit()
+    print cursor.lastrowid
+
 
 
 if __name__ == '__main__':
